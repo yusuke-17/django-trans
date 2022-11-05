@@ -1,13 +1,24 @@
-<html>
-  <head>
-    <meta charset="utf-8" />
-  </head>
+{% extends 'transfile/base.html' %}
 
-  <body>
-    <form method="POST" enctype="multipart/form-data">>
-      {% csrf_token %} {{ form.as_p }}
-      <button type="submit">翻訳</button>
-    </form>
+{% load widget_tweaks %}
+
+{% block content %}
+
+<form method="POST">
+    {% csrf_token %}
+
+    <div class="mb-3">
+        {{ form.sentence|add_label_class:"form-label" }}
+        {{ form.sentence|add_class:"form-control" }}
+    </div>
+
+    <button type="submit" class="btn btn-primary">翻訳</button>
+</form>
+
+{% if trans_result %}
+<div class="alert alert-primary mt-3" role="alert">
     {{ trans_result }}
-  </body>
-</html>
+</div>
+{% endif %}
+
+{% endblock %}
