@@ -2,4 +2,5 @@ from django.db import models
 
 # Create your models here.
 class FileUpload(models.Model):
-    files = models.FileField(upload_to = 'files')
+    uploadedFile = models.FileField(upload_to = "Uploaded_Files/")
+    dateTimeOfUpload = models.DateTimeField(auto_now = True)

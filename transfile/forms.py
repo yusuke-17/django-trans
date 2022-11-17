@@ -8,7 +8,7 @@ class TransFileForm(forms.Form):
 
     sentence = forms.CharField(label='翻訳(日本語)', widget=forms.Textarea(), required=True)
     
-class UploadForm(forms.ModelForm):
-    class Meta:
-        model = FileUpload
-        fields = ('files',)
+# class FileUpload(forms.ModelForm):
+#     class Meta:
+#         model = FileUpload
+#         fields = ('files',)
