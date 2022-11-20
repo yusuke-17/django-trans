@@ -4,20 +4,21 @@
 
 {% block content %}
 
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
+    <input type="file" name="uploadedFile">
     {% csrf_token %}
 
-    <div class="mb-3">
+    <!-- <div class="mb-3">
         {{ form.sentence|add_label_class:"form-label" }}
         {{ form.sentence|add_class:"form-control" }}
-    </div>
+    </div> -->
 
-    <button type="submit" class="btn btn-primary">翻訳</button>
+    <button type="submit" value="Uploaad" class="btn btn-primary">翻訳（.docxファイル）</button>
 </form>
 
 {% if trans_result %}
 <div class="alert alert-primary mt-3" role="alert">
-    {{ trans_result }}
+    <!-- {{ trans_result }} -->
 </div>
 {% endif %}
 

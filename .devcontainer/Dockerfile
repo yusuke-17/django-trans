@@ -5,3 +5,4 @@ RUN pip install django
 RUN pip install --upgrade deepl
 RUN pip install django-widget-tweaks
 RUN pip install django-environ
+RUN pip install python-docx
